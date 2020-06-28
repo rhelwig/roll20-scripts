@@ -1,0 +1,18 @@
+!power {{
+--charid|@{selected|token_id}
+  --emote|@{selected|token_name}
+  --tokenid|@{selected|token_id}
+  --name|casts Toll the Dead
+  --leftsub|Ranged Spell Attack
+  --rightsub|60 foot range
+  --@{target|A|token_name}| rolls a [[ [$SAV] [NH] ?{Save|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1} + @{target|A|wisdom_save_bonus} [Wisdom Save Bonus] ]] against a DC of @{selected|spell_save_dc}
+  --?? $SAV < @{selected|spell_save_dc} AND @{target|A|bar3} == @{target|A|bar3|max} ?? Fail:| taking [[ [$Dmg1] [NH] 2d8 + @{global_damage_mod_roll} ]] points of necrotic damage
+  --?? $SAV < @{selected|spell_save_dc} AND @{target|A|bar3} < @{target|A|bar3|max} ?? Fail:| taking [[ [$Dmg2] [NH] 2d12 + @{global_damage_mod_roll} ]] points of necrotic damage
+  --soundfx|_audio,play,nomenu|BellToll
+  --vfx_opt|@{target|A|token_id} burn-death
+  --?? $SAV < @{selected|spell_save_dc} AND @{target|A|bar3} == @{target|A|bar3|max} ?? alterbar1|_target|@{target|A|token_id} _bar|3 _amount|-[^Dmg1] _show|all
+  --?? $SAV < @{selected|spell_save_dc} AND @{target|A|bar3} < @{target|A|bar3|max} ?? alterbar2|_target|@{target|A|token_id} _bar|3 _amount|-[^Dmg2] _show|all
+
+  --?? $SAV < @{selected|spell_save_dc} AND @{target|A|bar3} == @{target|A|bar3|max} AND @{target|A|bar3} < $Dmg1 ?? api_token-mod|_ids @{target|A|token_id} _ignore-selected _set statusmarkers|dead
+  --?? $SAV < @{selected|spell_save_dc} AND @{target|A|bar3} == @{target|A|bar3|max} AND @{target|A|bar3} < $Dmg2 ?? api_token-mod|_ids @{target|A|token_id} _ignore-selected _set statusmarkers|dead
+}}

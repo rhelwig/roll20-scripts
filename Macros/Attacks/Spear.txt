@@ -1,0 +1,16 @@
+!power {{
+  --emote|@{selected|token_name}
+  --tokenid|@{selected|token_id}
+  --name|stabs at @{target|token_name} with a spear
+  --leftsub|Melee Attack
+  --rightsub|
+  --and rolls |  [[ [$ATK] ?{Attack|Standard,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1} + @{selected|strength_mod}[Melee Attack Bonus] + @{selected|pb} [Proficiency Bonus] + @{global_attack_mod} ]]
+  --?? $ATK >= @{target|AC} AND $ATK.base <> 20 ?? doing |[[ [$DMG] [NH] 1d8 [Spear] + @{selected|strength_mod} ]] points of damage
+  --?? $ATK.base == 20 ?? Critically Hitting| for [[ [$CritDMG] [NH] 1d8 [Spear] + 8 [Crit] + @{selected|strength_mod} ]] points of damage
+  --soundfx|_audio,play,nomenu|DaggerStrike
+  --?? $ATK >= @{target|AC} AND $ATK.base <> 20 ?? alterbar1|_target|@{target|token_id} _bar|3 _amount|-[^DMG] _show|all
+  --?? $ATK.base == 20 ?? alterbar2|_target|@{target|token_id} _bar|3 _amount|-[^CritDMG] _show|all
+
+  --?? $ATK >= @{target|AC} AND $ATK.base <> 20 AND @{target|bar3} < $DMG ?? api_token-mod|_ids @{target|token_id} _ignore-selected _set statusmarkers|dead
+  --?? $ATK.base == 20 AND @{target|bar3} < $CritDMG ?? api_token-mod|_ids @{target|token_id} _ignore-selected _set statusmarkers|dead
+}}

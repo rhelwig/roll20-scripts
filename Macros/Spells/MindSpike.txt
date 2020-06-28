@@ -1,0 +1,19 @@
+!power {{
+  --emote|@{selected|token_name}
+  --tokenid|@{selected|token_id}
+  --name|casts Mind Spike
+  --leftsub|Ranged Spell Attack
+  --rightsub|60 foot range
+  --@{target|token_name}| rolls a [[ [$SAV] [NH] ?{Save|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1} + @{target|wisdom_save_bonus} [Wisdom Save Bonus] ]] against a DC of @{selected|spell_save_dc}
+  --?? $SAV >= @{selected|spell_save_dc} ?? Success:| taking only [[ [$HalfDmg] [NH] floor(3d8 / 2) ]] points of psychic damage
+  --?? $SAV < @{selected|spell_save_dc} ?? Fail:| taking [[ [$Dmg] [NH] 3d8 ]] points of psychic damage
+  --soundfx|_audio,play,nomenu|MindSpike
+  --vfx_opt|@{target|token_id} nova-smole
+  --?? $SAV < @{selected|spell_save_dc} ?? Description!|For up to one hour you always know @{target|token_name}'s location, they can't hide from you, and being invisible doesn't cause you any problems.
+ --?? $SAV < @{selected|spell_save_dc} ?? api_token-mod|_ids @{target|token_id} _ignore-selected _set statusmarkers|radioactive
+ --?? $SAV < @{selected|spell_save_dc} ?? alterbar1|_target|@{target|token_id} _bar|3 _amount|-[^Dmg] _show|all
+ --?? $SAV >= @{selected|spell_save_dc} ?? alterbar2|_target|@{target|token_id} _bar|3 _amount|-[^HalfDmg] _show|all
+ --?? $SAV < @{selected|spell_save_dc} AND @{target|bar3} < $Dmg ?? api_token-mod|_ids @{target|token_id} _ignore-selected _set statusmarkers|dead
+ --?? $SAV >= @{selected|spell_save_dc} AND @{target|bar3} < $HalfDmg ?? api_token-mod|_ids @{target|token_id} _ignore-selected _set statusmarkers|dead
+}}
+!modattr --name @{selected|token_name} --lvl4_slots_expended|-1

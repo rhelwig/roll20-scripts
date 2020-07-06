@@ -1,0 +1,22 @@
+!power {{
+  --emote|@{selected|token_name}
+  --tokenid|@{selected|token_id}
+  --name|casts Inflict Wounds
+  --leftsub|Melee Spell Attack
+  --rightsub|Touch
+  --cast at|level [[ [$lvl] ?{Cast at|1,1|2,2|3,3|4,4} ]]
+  --@{selected|character_name}| rolls a [[ [$ATK] ?{Attack|Standard,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1} + @{spell_attack_bonus} [Spell Attack Bonus] + @{global_attack_mod} ]] against @{target|token_name}
+
+  --?? $ATK >= @{target|AC} AND $ATK.base <> 20 ?? Doing |[[ [$DMG] [NH] (2+$lvl)d10[Necrotic] + @{global_damage_mod_roll} ]] points of damage
+  --?? $ATK.base == 20 ?? Critically Hitting| for [[ [$CritDMG] [NH] (2+$lvl)d10+((2+$lvl)*10)[Necrotic] + @{global_damage_mod_crit} ]] points of damage
+  --soundfx|_audio,play,nomenu|CrowCalling
+  --vfx_opt|@{target|token_id} nova-holy
+
+  --?? $ATK >= @{target|AC} AND $ATK.base <> 20 ?? alterbar1|_target|@{target|token_id} _bar|3 _amount|-[^DMG] _show|all
+  --?? $ATK.base == 20 ?? alterbar2|_target|@{target|token_id} _bar|3 _amount|-[^CritDMG] _show|all
+
+  --?? $ATK >= @{target|AC} AND $ATK.base <> 20 AND @{target|bar3} < $DMG ?? api_token-mod|_ids @{target|token_id} _ignore-selected _set statusmarkers|dead
+  --?? $ATK.base == 20 AND @{target|bar3} < $CritDMG ?? api_token-mod|_ids @{target|token_id} _ignore-selected _set statusmarkers|dead
+
+}}
+!modattr --name @{selected|token_name} --lvl[$lvl]_slots_expended|-1

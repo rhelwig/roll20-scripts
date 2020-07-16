@@ -1,3 +1,4 @@
+# Hints, Tips, and Quirks
 For the AC, always use bar2 instead of AC or npc_AC. This does require us to make sure that all tokens have bar2 linked to the appropriate character sheet attribute.
 
 We have been using bar3 for HP. Others often use bar1 for HP. Because of this we want to make it easy to change the scripts and macros. For macros, doing a search/replace on bar3 is simple enough. For API scripts, a global constant should be used at the top of the file.

@@ -1,0 +1,57 @@
+RollVars: RB|[[;RE|]];
+
+Battleaxe:WAction|swings at;WName|Battleaxe;DamageRoll|1d8;CritRoll|8;DamageType|slashing;WProperties|Versatile;
+
+Club:WAction|swings at;WName|Club;DamageRoll|1d4;CritRoll|4;DamageType|bludgeoning;WProperties|Light;
+
+Dagger:WAction|stabs at;WName|Dagger;DamageRoll|1d4;CritRoll|4;DamageType|piercing;WProperties|Finesse, Light, Range, Throw, 20/60;
+
+Flail:WAction|swings at;WName|Flail;DamageRoll|1d8;CritRoll|8;DamageType|bludgeoning;WProperties|;
+
+Glaive:WAction|swings at;WName|Glaive;DamageRoll|1d10;CritRoll|10;DamageType|slashing;WProperties|Heavy, Reach, Two-Handed;
+
+Greataxe:WAction|swings at;WName|Greataxer;DamageRoll|1d12;CritRoll|12;DamageType|slashing;WProperties|Heavy, Two-Handed;
+
+Greatclub:WAction|swings at;WName|Greatclub;DamageRoll|1d8;CritRoll|8;DamageType|bludgeoning;WProperties|Two-Handed;
+
+Greatsword:WAction|swings at;WName|Greatsword;DamageRoll|2d6;CritRoll|12;DamageType|slashing;WProperties|Heavy, Two-Handed;
+
+Halberd:WAction|stabs at;WName|Halberd;DamageRoll|1d10;CritRoll|10;DamageType|slashing;WProperties|Reach, Two-Handed;
+
+Handaxe:WAction|swings at;WName|Handaxe;DamageRoll|1d6;CritRoll|6;DamageType|slashing;WProperties|Light, Range, Throw, 20/60);
+
+Javelin:WAction|stabs at;WName|Javelin;DamageRoll|1d6;CritRoll|6;DamageType|piercing;WProperties|Range, Thrown, (30/120);
+
+Lance:WAction|stabs at;WName|Lance;DamageRoll|1d12;CritRoll|12;DamageType|piercing;WProperties|Reach;
+
+Light Hammer:WAction|swings at;WName|Light Hammer;DamageRoll|1d4;CritRoll|4;DamageType|bludgeoning;WProperties|Light, Thrown, (20/60);
+
+Longsword:WAction|swings at;WName|Longsword;DamageRoll|1d8;CritRoll|8;DamageType|slashing;WProperties|Versatile;
+
+Mace:WAction|swings at;WName|Mace;DamageRoll|1d6;CritRoll|6;DamageType|bludgeoning;WProperties|;
+
+Maul:WAction|swings at;WName|Maul;DamageRoll|2d6;CritRoll|12;DamageType|bludgeoning;WProperties|Heavy, Two-Handed;
+
+Morningstar:WAction|swings at;WName|Morningstar;DamageRoll|1d8;CritRoll|8;DamageType|piercing;WProperties|;
+
+Pike:WAction|stabs at;WName|Pike;DamageRoll|1d10;CritRoll|10;DamageType|piercing;WProperties|Heavy, Reach, Two-Handed;
+
+Quarterstaff:WAction|swings at;WName|Quarterstaff;DamageRoll|1d6;CritRoll|6;DamageType|bludgeoning;WProperties|Versatile;
+
+Rapier:WAction|swings at;WName|Rapier;DamageRoll|1d8;CritRoll|8;DamageType|piercing;WProperties|Finesse;
+
+Scimitar:WAction|swings at;WName|Scimitar;DamageRoll|1d6;CritRoll|6;DamageType|slashing;WProperties|Finesse, Light;
+
+Shortsword:WAction|stabs at;WName|Shortsword;DamageRoll|1d6;CritRoll|6;DamageType|piercing;WProperties|Finesse, Light;
+
+Sickle:WAction|slashes at;WName|Sickle;DamageRoll|1d4;CritRoll|4;DamageType|slashing;WProperties|Light;
+
+Spear: WAction|stabs at;WName|Spear;DamageRoll|1d8;CritRoll|8;DamageType|piercing;WProperties|Range, Thrown, Versatile, (20/60);
+
+Trident:WAction|stabs at;WName|Trident;DamageRoll|1d6;CritRoll|6;DamageType|piercing;WProperties|Range, Thrown, Versatile, (20/60);
+
+War Pick:WAction|swings at;WName|War Pick;DamageRoll|1d8;CritRoll|8;DamageType|piercing;WProperties|;
+
+Warhammer:WAction|swings at;WName|Warhammer;DamageRoll|1d8;CritRoll|8;DamageType|bludgeoning;WProperties|Versatile;
+
+Whip:WAction|snaps at;WName|Whip;DamageRoll|1d4;CritRoll|4;DamageType|slashing;WProperties|Finesse, Reach;

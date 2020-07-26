@@ -1,5 +1,3 @@
-RollVars: RB|[[;RE|]];
-
 Battleaxe:WAction|swings at;WName|Battleaxe;DamageRoll|1d8;CritRoll|8;DamageType|slashing;WProperties|Versatile;
 
 Club:WAction|swings at;WName|Club;DamageRoll|1d4;CritRoll|4;DamageType|bludgeoning;WProperties|Light;

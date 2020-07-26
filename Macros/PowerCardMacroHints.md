@@ -7,7 +7,7 @@ Most macros try to apply any damage done to the target. This is usually towards 
 
 If a macro applies damage to a target, it also likely checks to see if the target has been knocked unconscious. If so it applies a red X status marker.
 
-We always use $ATK, $DMG, $CritDMG, ad $lvl
+We always use $ATK, $DMG, $CritDMG, and $lvl
 
 For cantrip progression replace the '1' in the 1d8 or whatever with '[[round((@{selected|level} + 1) / 6 + 0.5)]]' for damage rolls.
 

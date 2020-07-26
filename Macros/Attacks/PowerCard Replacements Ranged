@@ -1,0 +1,17 @@
+Blowgun:WAction|blows at;WName|Blowgun;DamageRoll|1;CritRoll|1;DamageType|piercing;WProperties|Loading, Range, (25/100);Desc|;
+
+Dart:WAction|throws at;WName|Dart;DamageRoll|1d4;CritRoll|4;DamageType|piercing;WProperties|Finesse, Range, Thrown, (20/60);Desc|;
+
+Hand Crossbow:WAction|shoots at;WName|Hand Crossbow;DamageRoll|1d6;CritRoll|6;DamageType|piercing;WProperties|Light, Loading, Range, (30/120);Desc|;
+
+Heavy Crossbow:WAction|shoots at;WName|Heavy Crossbow;DamageRoll|1d10;CritRoll|10;DamageType|piercing;WProperties|Heavy, Loading, Range, Two-Handed (100/400);Desc|;
+
+Light Crossbow:WAction|shoots at;WName|Light Crossbow;DamageRoll|1d8;CritRoll|8;DamageType|piercing;WProperties|Loading, Range, Two-Handed, (80/320);Desc|;
+
+Longbow:WAction|shoots at;WName|Longbow;DamageRoll|1d8;CritRoll|8;DamageType|piercing;WProperties|Ammunition, Heavy, Range, Two-Handed, (150/600);Desc|;
+
+Net:WAction|throws at;WName|Net;DamageRoll|0;CritRoll|0;DamageType|bludgeoning;WProperties|Range, Thrown, (5/15);Desc|A Large or smaller creature hit by a net is Restrained until it is freed. A net has no effect on creatures that are formless, or creatures that are Huge or larger. A creature can use its action to make a DC 10 Strength check, freeing itself or another creature within its reach on a success. Dealing 5 slashing damage to the net (AC 10) also frees the creature without harming it, ending the effect and destroying the net. When you use an action, Bonus Action, or Reaction to Attack with a net, you can make only one Attack regardless of the number of attacks you can normally make.;
+
+Shortbow:WAction|shoots at;WName|Shortbow;DamageRoll|1d6;CritRoll|6;DamageType|piercing;WProperties|Ammunition, Range, Two-Handed, (80/320);Desc|;
+
+Sling:WAction|shoots at;WName|Sling;DamageRoll|1d4;CritRoll|4;DamageType|bludgeoning;WProperties|Range, (30/120);Desc|;

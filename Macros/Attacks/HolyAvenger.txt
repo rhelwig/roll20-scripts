@@ -1,12 +1,13 @@
 !power {{
   --emote|@{selected|token_name}
   --tokenid|@{selected|token_id}
-  --name|swings at @{target|token_name} with the Holy Avenger
+  --target_list|@{target|token_id}
+  --name|swings at @{target|token_name} with a Holy Avenger
   --leftsub|Melee Attack
-  --rightsub|
-  --and rolls |  [[ [$ATK] ?{Attack|Standard,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1} + @{selected|strength_mod}[Melee Attack Bonus] + @{selected|pb} [Proficiency Bonus] + 3[Holy Avenger] + @{global_attack_mod} ]]
-  --?? $ATK >= @{target|AC} AND $ATK.base <> 20 ?? doing |[[ [$DMG] [NH] 1d8 [Sword] + @{selected|strength_mod} + 2[Dueling fighting style] + 3[Holy Avenger] + @{global_damage_mod} ]] points of damage
-  --?? $ATK.base == 20 ?? Critically Hitting| for [[ [$CritDMG] [NH] 1d8 [Sword] + 8 [Crit] + @{selected|strength_mod} + 2[Dueling fighting style] + 3[Holy Avenger] + @{global_damage_mod} ]] points of damage
+  --rightsub|+3, Versatile, Aura of Protection, Extra damage vs. fiends and undead
+  --and rolls | [[ [$ATK] ?{Attack|Standard,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1} + @{selected|strength_mod}[Melee Attack Bonus] + @{selected|pb} [Proficiency Bonus] + 3[Holy Avenger] + @{global_attack_mod} ]]
+  --?? $ATK >= @{target|AC} AND $ATK.base <> 20 ?? doing| [[ [$DMG] [NH] 1d8 [Longsword] + @{selected|strength_mod}[Melee Attack Bonus] + 3[Holy Avenger] + @{global_damage_mod_roll} ]] points of slashing damage
+  --?? $ATK.base == 20 ?? Critically Hitting| for [[ [$CritDMG] [NH] 1d8 [Longsword] + 8 [Crit] + @{selected|strength_mod}[Melee Attack Bonus] + 3[Holy Avenger] + @{global_damage_mod_crit} ]] points of slashing damage
   --soundfx|_audio,play,nomenu|LongswordStrike
   --?? $ATK >= @{target|AC} AND $ATK.base <> 20 ?? alterbar1|_target|@{target|token_id} _bar|3 _amount|-[^DMG] _show|all
   --?? $ATK.base == 20 ?? alterbar2|_target|@{target|token_id} _bar|3 _amount|-[^CritDMG] _show|all

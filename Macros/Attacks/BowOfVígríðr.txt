@@ -1,16 +1,17 @@
 !power {{
   --emote|@{selected|token_name}
   --tokenid|@{selected|token_id}
+  --target_list|@{target|token_id}
   --name|looses an arrow at @{target|token_name} from his Bow of Vígríðr
   --leftsub|Ranged Attack
-  --rightsub|150 / 600 feet
-  --and rolls |  [[ [$ATK] ?{Attack|Standard,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1} + @{selected|dexterity_mod}[Ranged Attack Bonus] + @{selected|pb}[Proficiency Bonus] + 1[Bow of Vígríðr] + 2[Archery fighting style] + @{global_attack_mod} ]]
-  --?? $ATK >= @{target|AC} AND $ATK.base <> 20 ?? doing |[[ [$DMG] [NH] 1d10[Arrow] + @{selected|dexterity_mod} + @{global_damage_mod} ]] points of piercing damage
-  --?? $ATK.base == 20 ?? Critically Hitting| for [[ [$CritDMG] [NH] 1d10[Arrow] + 10[Crit] + @{selected|dexterity_mod} + @{global_damage_mod} ]] points of piercing damage
+  --rightsub|Ammunition, Heavy, Two-Handed, Range (150/600) feet
+  --and rolls | [[ [$ATK] ?{Attack|Standard,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1} + @{selected|dexterity_mod}[Ranged Attack Bonus] + @{selected|pb}[Proficiency Bonus] + 1[Bow of Vígríðr] + @{global_attack_mod} ]]
+  --?? $ATK.base <> 1 AND $ATK >= @{target|bar2} AND $ATK.base <> 20 ?? doing |[[ [$DMG] [NH] 1d10[Arrow] + @{selected|dexterity_mod}[Ranged Attack Bonus] + @{global_damage_mod_roll} ]] points of piercing damage
+  --?? $ATK.base == 20 ?? Critically Hitting| for [[ [$CritDMG] [NH] 1d10[Arrow] + 10[Crit] + @{selected|dexterity_mod}[Ranged Attack Bonus] + @{global_damage_mod_crit} ]] points of piercing damage
   --soundfx|_audio,play,nomenu|ThrowKnife
-  --?? $ATK >= @{target|AC} AND $ATK.base <> 20 ?? alterbar1|_target|@{target|token_id} _bar|3 _amount|-[^DMG] _show|all
+  --?? $ATK.base <> 1 AND $ATK >= @{target|bar2} AND $ATK.base <> 20 ?? alterbar1|_target|@{target|token_id} _bar|3 _amount|-[^DMG] _show|all
   --?? $ATK.base == 20 ?? alterbar2|_target|@{target|token_id} _bar|3 _amount|-[^CritDMG] _show|all
 
-  --?? $ATK >= @{target|AC} AND $ATK.base <> 20 AND @{target|bar3} < $DMG ?? api_token-mod|_ids @{target|token_id} _ignore-selected _set statusmarkers|dead
+  --?? $ATK.base <> 1 AND $ATK >= @{target|bar2} AND $ATK.base <> 20 AND @{target|bar3} < $DMG ?? api_token-mod|_ids @{target|token_id} _ignore-selected _set statusmarkers|dead
   --?? $ATK.base == 20 AND @{target|bar3} < $CritDMG ?? api_token-mod|_ids @{target|token_id} _ignore-selected _set statusmarkers|dead
 }}

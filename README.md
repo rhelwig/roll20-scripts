@@ -8,9 +8,9 @@ The following API Scripts will need to be added to your game in order to run the
 - 5th Edition OGL by Roll20 Companion
 - PowerCards
 - Concentration
-- TokenMod
+- TokenMod [ Need to call '!token-mod --config' and make sure "Players can IDs" is ON]
 - ChatSetAttr
-- Roll20 Audio Master
+- Roll20 Audio Master [ call '!roll20AM --config' and make sure Access is "full" and import jukebox tracks to make them available to scripts.]
 - AlterBars.js (Available here: https://gist.github.com/Sky-Captain-13/a503c35914644e6f885f170eaeedc705 )
 - act.js (Available here: https://app.roll20.net/forum/post/6371080/turntracker1-spell-durations-and-effects/?pageforid=6371171#post-6371171 )
 
